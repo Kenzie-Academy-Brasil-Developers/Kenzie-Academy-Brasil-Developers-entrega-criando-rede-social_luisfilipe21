@@ -1,0 +1,100 @@
+main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: var(--grayShades1);
+    display: flex;
+    justify-content:space-around;
+    padding: 2rem 0;
+    gap: 34rem;
+}
+
+.container__user{
+    display: flex;
+
+    padding: 2rem;
+    width: 100%
+}
+.container__profile{
+    display: flex;
+    flex-direction: column; 
+    width: 60%;
+    margin-right: 4rem;
+}
+.profile__user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.profile__photo{
+    height: 3.125rem;
+}
+
+.user__name{
+    color: var(--grayShades2);
+    margin-bottom: 0.3rem;
+}
+
+.profile__form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+}
+.profile__form input{
+    height: 3rem;
+    border: 1px solid var(--grayShades3);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    color: var(--grayShades3);
+    padding: 0.5rem
+}
+
+.profile__form textarea{
+    height: 100%;
+    border: 1px solid var(--grayShades3);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    color: var(--grayShades3);
+    padding: 0.5rem
+}
+
+.profile__button{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: var(--grayShades3);
+}
+
+.sugestions__list{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.list__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.list__profile{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lsit__button{
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.lsit__button:hover{
+    background-color: var(--brand1);
+    color: var(--grayShades5);
+}
