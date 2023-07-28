@@ -96,6 +96,7 @@ textarea {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   outline: none;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,

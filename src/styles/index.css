@@ -1,3 +1,6 @@
+body{
+    width: 100%;  
+}
 main{
     width: 90%;
     margin: 0 auto;
@@ -5,24 +8,32 @@ main{
 
 .header{
     background-color: var(--grayShades1);
+    color: var(--grayShades5);
     display: flex;
     justify-content:space-around;
     padding: 2rem 0;
     gap: 34rem;
+
 }
 
 .container__user{
     display: flex;
-
-    padding: 2rem;
+    padding: 2rem 0;
     width: 100%
 }
+
 .container__profile{
     display: flex;
     flex-direction: column; 
-    width: 60%;
-    margin-right: 4rem;
+    width: 65%;
+    margin-right: 2rem;
 }
+
+.container__sugestions{
+    box-sizing: border-box;
+    width: 35%;
+}
+
 .profile__user{
     display: flex;
     align-items: center;
@@ -33,7 +44,7 @@ main{
 }
 
 .user__name{
-    color: var(--grayShades2);
+    color: var(--grayShades1);
     margin-bottom: 0.3rem;
 }
 
@@ -44,29 +55,49 @@ main{
 }
 .profile__form input{
     height: 3rem;
-    border: 1px solid var(--grayShades3);
+
+    font-size: var(--text-size1);
+    font-weight: var(--text-weight1);
+    line-height: var(--text-height1);
+
+    color: var(--grayShades2);
+    border: 1px solid var(--grayShades4);
+
+    border-radius: var(--radious);
     margin-bottom: 1rem;
-    border-radius: 8px;
-    color: var(--grayShades3);
     padding: 0.5rem
+}
+.profile__form input:focus, .profile__form textarea:focus{
+    border: 1px solid var(--brand2);
 }
 
 .profile__form textarea{
     height: 100%;
-    border: 1px solid var(--grayShades3);
+    font-size: var(--text-size1);
+    font-weight: var(--text-weight1);
+    line-height: var(--text-height1);
+
+    color: var(--grayShades2);
+    border: 1px solid var(--grayShades4);
+
     margin-bottom: 1rem;
     border-radius: 8px;
-    color: var(--grayShades3);
-    padding: 0.5rem
+    padding: 0.5rem;
 }
 
 .profile__button{
     display: flex;
     width: 20%;
+    align-self: flex-end;
     justify-content: center;
     border-radius: 8px;
-    padding: 0.8rem;
-    color: var(--grayShades3);
+    padding: 1rem;
+    background-color: var(--brand1);
+    color: var(--white);
+    cursor: pointer;
+}
+.profile__button:hover{
+    background-color: var(--brand2);
 }
 
 .sugestions__list{
@@ -80,7 +111,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    
 }
 
 .list__profile{
@@ -89,12 +120,117 @@ main{
     gap: 1rem;
 }
 
-.lsit__button{
-    padding: 0.5rem;
+.list__button{
+    padding: 0.5rem 0.9rem;
     border-radius: 4px;
+    background-color: var(--grayShades5);
+    color: var(--grayShades0);
+    border:1px solid var(--grayShades0);
+    cursor: pointer;
 }
 
-.lsit__button:hover{
-    background-color: var(--brand1);
-    color: var(--grayShades5);
+.list__button:hover{
+    background-color: var(--white);
+    color: var(--brand2);
+    border:1px solid var(--brand2)
+}
+.list__button:focus{
+    color: var(--brand2);
+}
+
+.text2--bold{
+    font-weight: 600;
+    font-size: var(--text-size2);
+
+}
+
+.posts__button{
+    background-color: var(--grayShades1);
+    color: var(--white);
+    padding: 0.8rem;
+    border-radius: var(--radious);
+}
+
+.posts__button:hover{
+    background-color: var(--grayShades0);
+}
+
+.container__posts{
+    margin: 2rem 0;
+    width: 60%;
+}
+
+.article__info{
+    margin: 5rem 0 3rem 0;
+}
+
+.article__info{
+    display: flex;
+}
+
+.profile__photo{
+    margin-right: 1rem;
+}
+
+.posts__title{
+    margin-bottom: 2rem;
+}
+
+.posts__aticle{
+    margin: 4rem 0;
+}
+
+.posts__info{
+    margin-bottom: 2rem;
+}
+
+.container__likes{
+    display: flex;
+    align-items: center;
+
+}
+
+.container__img{
+    margin: 0 2rem;
+}
+
+@media (max-width: 1025px){
+    .container__user{
+        flex-wrap: wrap;  
+    }
+    .container__profile{
+        width: 100%;
+    }
+    .container__sugestions{
+        text-align: left;
+        width: 100%;
+    }
+    .sugestions__list{
+        flex-direction: row;
+    }
+    .list__item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .list__profile{
+        gap: 0;
+        margin: 2rem 2rem 0 0;
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        width: 100%;
+        gap: 0;
+    }
+    .list__item{
+        flex-direction: column;
+    }
+    .list__profile{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile__photo{
+        margin-bottom: 1rem;
+    }
 }
