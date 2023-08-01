@@ -4,6 +4,7 @@ body{
 main{
     width: 90%;
     margin: 0 auto;
+    padding-top: 3.5rem;
 }
 
 .header{
@@ -13,7 +14,9 @@ main{
     justify-content:space-around;
     padding: 2rem 0;
     gap: 34rem;
-
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .container__user{
@@ -103,8 +106,10 @@ main{
 .sugestions__list{
     display: flex;
     flex-direction: column;
+    width: 100%;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    overflow-x: scroll;
 }
 
 .list__item{
@@ -182,6 +187,12 @@ main{
 
 .posts__info{
     margin-bottom: 2rem;
+    width: 100%;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
 .container__likes{
@@ -209,6 +220,7 @@ main{
         flex-direction: row;
     }
     .list__item{
+        width: auto;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -223,8 +235,11 @@ main{
         width: 100%;
         gap: 0;
     }
+    .sugestions__list{
+        overflow-x: scroll;
+    }
     .list__item{
-        flex-direction: column;
+        
     }
     .list__profile{
         flex-direction: column;
@@ -232,5 +247,5 @@ main{
     }
     .profile__photo{
         margin-bottom: 1rem;
-    }
+     }
 }
