@@ -18,8 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script src="./src/scripts/database.js" defer></script>
-    <script src="./src/scripts/index.js" defer></script>
+    
+    <script src="./src/scripts/index.js" type="module" defer></script>
     
     <title>Criando rede social</title>
   </head>
@@ -29,7 +29,7 @@
       <img src="./src/assets/img/logo.svg" alt="Foto do perfil" class="header__photo" />
       <p class="header__out text2">Sair</p>
     </header>
-
+    
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
       <!-- ÁREA 1 (CRIAÇÃO DE POST E SUGESTÕES)-->
@@ -108,14 +108,14 @@
         <h2 class="posts__title title1">Posts</h2>
         <!-- POST 1 -->
         <article class="posts__aticle">
-          <div class="article__info">
+          <!-- <div class="article__info">
             <img src="./src/assets/img/user5.svg" alt="Iris Silva" class="profile__photo" />
             <div class="article__user">
               <h2 class="user__name title2">Iris Silva</h2>
               <p class="user__job text2 ">Front end Engineer</p>
             </div>
           </div>
-          <h2 class="posts__title title2">
+          <h2 class="posts__title title1">
             Empresa de Tecnologia da Informação abre vagas para programa de
             estágio
           </h2>
@@ -137,11 +137,11 @@
               />
               <small class="posts__likes">25</small>
             </div>
-          </div>
-        </article>
+          </div> -->
+        </article> 
 
         <!-- POST 2 -->
-        <article class="posts__aticle">
+        <!-- <article class="posts__aticle">
           <div class="article__info">
             <img src="./src/assets/img/user6.svg" alt="Carla Maria" class="profile__photo"/>
             <div class="article__user">
@@ -149,7 +149,7 @@
               <p class="user__job text2 ">Back end Engineer</p>
             </div>
           </div>
-          <h2 class="posts__title title2">
+          <h2 class="posts__title title1">
             Programa de estágio abre vagas em Segurança da Informação com regime
             remoto
           </h2>
@@ -173,10 +173,10 @@
               <small class="posts__likes">19</small>
             </div>
           </div>
-        </article>
+        </article> -->
 
         <!-- POST 3 -->
-        <article class="posts__aticle">
+        <!-- <article class="posts__aticle">
           <div class="article__info">
             <img src="./src/assets/img/user7.svg" alt="João Carvalho" class="profile__photo"/>
             <div class="article__user">
@@ -184,7 +184,7 @@
               <p class="user__job text2 ">Devop's</p>
             </div>
           </div>
-          <h2 class="posts__title title2">
+          <h2 class="posts__title title1">
             O que é programação orientada a objetos e programação funcional
           </h2>
           <p class="posts__info text1">
@@ -210,7 +210,9 @@
               <small class="posts__likes">8</small>
             </div>
           </div>
-        </article>
+        </article> -->
+
+        <dialog class="container__controller"></dialog>
       </section>
     </main>
   </body>

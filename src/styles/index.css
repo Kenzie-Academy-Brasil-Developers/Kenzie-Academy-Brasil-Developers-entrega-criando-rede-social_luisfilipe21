@@ -8,15 +8,17 @@ main{
 }
 
 .header{
+    width: 100%;
     background-color: var(--grayShades1);
     color: var(--grayShades5);
     display: flex;
-    justify-content:space-around;
-    padding: 2rem 0;
+    justify-content:space-between;
+    padding: 2rem 6rem;
     gap: 34rem;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 .container__user{
@@ -109,14 +111,13 @@ main{
     width: 100%;
     height: 100%;
     justify-content: space-between;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .list__item{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
 }
 
 .list__profile{
@@ -166,11 +167,9 @@ main{
 }
 
 .article__info{
-    margin: 5rem 0 3rem 0;
-}
-
-.article__info{
     display: flex;
+    margin: 3rem 0 3rem 0;
+    position: relative;
 }
 
 .profile__photo{
@@ -182,7 +181,17 @@ main{
 }
 
 .posts__aticle{
-    margin: 4rem 0;
+    position: relative;
+    margin: 2rem 0;
+    
+}
+
+.span__close{
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .posts__info{
@@ -203,9 +212,34 @@ main{
 
 .container__img{
     margin: 0 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.div__container{
+    width: 95%;
+}
+.posts__likes{
+    margin-left: 1rem;
+}
+
+dialog{
+    width: 75%;
+    border: 1px solid;
+    border-radius: var(--radious);
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+
 @media (max-width: 1025px){
+    .header{
+        padding: 2rem;
+    }
     .container__user{
         flex-wrap: wrap;  
     }
@@ -220,7 +254,6 @@ main{
         flex-direction: row;
     }
     .list__item{
-        width: auto;
         flex-direction: column;
         align-items: flex-start;
     }
@@ -235,14 +268,11 @@ main{
         width: 100%;
         gap: 0;
     }
-    .sugestions__list{
-        overflow-x: scroll;
-    }
     .list__item{
-        
+        min-width: 250px;
     }
     .list__profile{
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: flex-start;
     }
     .profile__photo{
