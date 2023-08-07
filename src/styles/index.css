@@ -224,6 +224,20 @@ main{
     margin-left: 1rem;
 }
 
+.img__post{
+    background-image: url(../assets/img/heart-gray.svg);
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 1.1rem;
+}
+
+.like{
+    background-image: url(../assets/img/heart-red.svg);
+}
+
 dialog{
     width: 75%;
     border: 1px solid;
