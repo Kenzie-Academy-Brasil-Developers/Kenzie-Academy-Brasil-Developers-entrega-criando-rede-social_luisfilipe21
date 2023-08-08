@@ -1,31 +1,5 @@
 import { posts, users, suggestUsers } from "./database.js";
 
-// function handeleModalPost(posts) {
-//     const containerController = document.querySelector('.container__controller')
-//     const button_posts = document.querySelectorAll('.posts__button');
-
-//     let buttonFound = {};
-
-//     for (let i = 0; i < button_posts.length; i++) {
-//         const buttonClick = button_posts[i];
-
-//         buttonClick.addEventListener('click', function (event) {
-//             containerController.innerHTML = '';
-
-//             for (let postId = 0; postId < posts.length; postId++) {
-//                 if (posts[postId].id === event.target.id) {
-//                     buttonFound = posts[postId];
-//                 }
-//             }
-//         })
-
-//         const postModal = createModal(buttonFound);
-//         containerController.appendChild(postModal);
-//         containerController.showModal();
-//     }
-// }
-
-
 function createModal(posts) {
   const containerController = document.querySelector('.container__controller');
   containerController.showModal();
@@ -98,18 +72,6 @@ function createModal(posts) {
   // containerController.appendChild(div_container);
 }
 
-// function closeHandleModalPost() {
-//     const containerController = document.querySelector('.container__controller')
-
-//     const button_close = document.querySelector('.span__close');
-//     button_close.addEventListener('click', function () {
-
-//         containerController.close();
-//     })
-// }
-
-
-// área dos posts
 
 function renderPosts(posts) {
   const article_main = document.querySelector('.posts__aticle')
@@ -192,46 +154,94 @@ function createPost(postsArray) {
 
 function colorLike() {
   const heartCollor = document.querySelectorAll('.img__post');
-
+  const likeCount = document.querySelectorAll('.posts__likes');
+  
   for (let i = 0; i < heartCollor.length; i++) {
-      heartCollor[i].addEventListener('click', function () {     
-      if(heartCollor[i].classList.contains('like')) {
-        heartCollor[i].classList.remove('like');
-      } else {
-        heartCollor[i].classList.add('like');
+    let count = Number(likeCount[i].innerText);
+
+    heartCollor[i].addEventListener('click', function () {
+        if(heartCollor[i].classList.contains('like')) {
+          heartCollor[i].classList.remove('like');
+          count--;
+          likeCount[i].innerText = count;
+        } else {
+          heartCollor[i].classList.add('like');
+          count++;
+          likeCount[i].innerText = count;
+      }
+    })
+  }
+
+}
+
+function addPost(postsArray) {
+  
+  const nameUser = document.querySelector('.user__name');
+  const userJob = document.querySelector('.user__job');
+  const userPhoto = document.querySelector('.profile__photo');
+  const inputTitle = document.querySelector('.input__title');
+  const postDescription = document.querySelector('.post__description');
+
+  const postButton = document.querySelector('.profile__button');
+
+  postButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    const newPost = {};
+
+
+    newPost.id = `${Number(postsArray[postsArray.length-1].id)+1}`;
+    newPost.title = inputTitle.value;
+    newPost.text = postDescription.value;
+
+    newPost.user = nameUser.innerText;
+    newPost.stack = userJob.innerText;
+    newPost.img = userPhoto.src;
+
+    newPost.likes = 0;
+
+    postsArray.push(newPost);
+    renderPosts(postsArray);
+    // console.log(postsArray)
+    inputTitle.value = '';
+    postDescription.value = '';
+    colorLike();
+  })
+}
+
+
+function disableButton() {
+  const button = document.querySelector('.profile__button');
+
+  const formArea = document.querySelector('.post__description');
+
+  formArea.addEventListener('click', () => {
+    if (formArea.innerText === '') {
+      button.classList.add('disabled');
+    } else {
+      button.classList.remove('disabled');
+    }
+  })
+}
+
+function followButton() {
+  const button = document.querySelectorAll('.list__button');
+  
+  for (let i = 0; i < button.length; i++){
+    button[i].addEventListener('click', () => {
+      if(button[i].classList.contains('followed')){
+        button[i].classList.remove('followed');
+        button[i].innerText = 'Seguir';
+      }else{
+        button[i].classList.add('followed');
+        button[i].innerText = 'Seguindo';
       }
     })
   }
 }
 
-function addPost(postsArray){
-  const nameUser = document.querySelector('.user__name');
-  const userJob = document.querySelector('.user__name');
-  const userPhoto = document.querySelector('.profile__photo');
-  const inputTitle = document.querySelector('.user__job');
-  const postDescription = document.querySelector('.post__description');
-
-  const postButton = document.querySelector('.profile__button');
-
-  postButton.addEventListener('click', function(e){
-    e.preventDefault();
-    const newPost = {};
-
-    newPost.id = `${Number(postsArray[postsArray.length - 1].id)+1}`;
-    newPost.title = inputTitle.value;
-    newPost.text = postDescription.value;
-    newPost.user = nameUser.value;
-    newPost.stack = userJob.value;
-    newPost.img = userPhoto.img;
-
-
-  })
-}
-
-// handeleModalPost(posts)
+addPost(posts);
+disableButton();
+followButton();
 renderPosts(posts);
-// createModal(posts);
-// handeleModalPost(posts);
 colorLike();
-addPost();
 
