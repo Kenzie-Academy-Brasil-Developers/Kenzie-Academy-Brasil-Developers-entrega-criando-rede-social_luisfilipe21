@@ -132,8 +132,6 @@ function createPost(postsArray) {
   small_content.innerHTML = postsArray.likes;
 
   button_post.innerText = 'Abrir Post';
-  // div_image_like.src = "./src/assets/img/heart-gray.svg";
-  // div_image_like.alt = "Empty Heart(Post not liked)"
 
 
   button_post.addEventListener('click', function (e) {
